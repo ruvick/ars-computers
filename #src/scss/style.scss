@@ -1,0 +1,959 @@
+@use "sass:math";
+//<МИКСИНЫ>===============================================================================================
+@import "mixins";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+//&display=swap&subset=cyrillic-ext
+// @import "fonts";
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+@font-face {
+	font-family: "Lato";
+	src: url("../fonts/Lato-Thin.eot");
+	src: local("☺"), url("../fonts/Lato-Thin.woff") format("woff"), url("../fonts/Lato-Thin.ttf") format("truetype"),
+	url("../fonts/Lato-Thin.svg") format("svg");
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Lato";
+	src: url("../fonts/Lato-Regular.eot");
+	src: local("☺"), url("../fonts/Lato-Regular.woff") format("woff"), url("../fonts/Lato-Regular.ttf") format("truetype"),
+	url("../fonts/Lato-Regular.svg") format("svg");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Lato";
+	src: url("../fonts/Lato-Semibold.eot");
+	src: local("☺"), url("../fonts/Lato-Semibold.woff") format("woff"), url("../fonts/Lato-Semibold.ttf") format("truetype"),
+	url("../fonts/Lato-Semibold.svg") format("svg");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Lato";
+	src: url("../fonts/Lato-Bold.eot");
+	src: local("☺"), url("../fonts/Lato-Bold.woff") format("woff"), url("../fonts/Lato-Bold.ttf") format("truetype"),
+	url("../fonts/Lato-Bold.svg") format("svg");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Lato";
+	src: url("../fonts/Lato-Heavy.eot");
+	src: local("☺"), url("../fonts/Lato-Heavy.woff") format("woff"), url("../fonts/Lato-Heavy.ttf") format("truetype"),
+	url("../fonts/Lato-Heavy.svg") format("svg");
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MyriadPro';
+	src: url('../fonts/MyriadPro-Regular.eot');
+	src: local('☺'), url('../fonts/MyriadPro-Regular.woff') format('woff'), url('../fonts/MyriadPro-Regular.ttf') format('truetype'), url('../fonts/MyriadPro-Regular.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MyriadPro';
+	src: url('../fonts/MyriadPro-Bold.eot');
+	src: local('☺'), url('../fonts/MyriadPro-Bold.woff') format('woff'), url('../fonts/MyriadPro-Bold.ttf') format('truetype'), url('../fonts/MyriadPro-Bold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+//@import "icons";
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: "Lato";
+$fontSize: 16;
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>======================================================================================================= 
+
+//<ПЕРЕМЕННЫЕ>==========================================================================================================
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1440;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: #161615;
+
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+body {
+	font-weight: 400;
+	line-height: 23px;
+	color: $mainColor;
+	a {
+		font-family: "Lato";
+		line-height: 16.8px;
+		color: #161615;
+	}
+	&._lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ЗАГОЛОВКИ>=================================================================================================================
+h1 {
+	font-size: 48px;
+	font-weight: 700;
+	line-height: 46 / 48 *100%;}
+h2 {
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 48 / 40 *100%;}
+h3 {
+	font-size: 28px;
+	font-weight: 500;
+	line-height: 38px;}
+h4 {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28.8 / 24 *100%;}
+
+h5 {
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 24 / 20 *100%;}
+
+h6 {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 23 / 18 *100%;}
+	
+	.title {
+		color: #fff;
+		text-align: center;
+	}
+	
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 26px;}
+		h2 {
+			font-size: 24px;}
+	}
+//<ЗАГОЛОВКИ>=================================================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	// min-height: 200vh;
+	// position: relative;
+	&._loaded {
+	} 
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+._container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	// @media (max-width: $md1 + px) {
+	// 	max-width: 970px;
+	// }
+	// @media (max-width: $md2+px) {
+	// 	max-width: 750px;
+	// }
+	// @media (max-width: $md3+px) {
+	// 	max-width: none;
+	// 	padding: 0 10px;
+	// }
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms";
+@import "ui";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "../../js/fancybox/jquery.fancybox";
+@import "datepicker";
+@import "lightgallery";
+//@import "popover.min";
+//@import "baguetteBox";
+// @import "fancybox.min";
+@import "pagging";
+// @import "map";
+// @import "slider";
+// @import "collection";
+@import "tippy";
+@import "nouislider";
+@import "popup";
+@import "header";
+@import "footer";
+@import "home";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+	flex: 1 1 auto;
+	// padding: 35px 0; 
+	// padding-top: 80px;
+}
+//===================================================================================================================================
+
+.slider-bg-wrap {
+	position: relative;
+}
+.slider-bg {
+	background: grey;
+	&__container {
+		position: relative;
+		z-index: 500;
+	}
+
+	&__slide {
+		position: relative;
+		width: 100%;
+		padding: 203px 0 236px 0;
+		background-repeat: no-repeat !important;
+		background-size: cover !important;
+		background-position: center !important;
+	}
+
+	&__title {
+		color: #fff;
+		font-weight: 100;
+		span {
+			line-height: 57.6px;
+			font-weight: 800;
+			margin-top: 6px;
+		}
+	}
+}
+
+.swiper-button-block {
+	display: flex;
+	justify-content: space-between;
+	width: 130px;
+}
+
+.slider-bg__swiper-button-block {
+	display: flex;
+  flex-direction: column;
+	position: absolute;
+	top: 43%;
+	right: 2%;
+	width: 32px;
+	height: 75px;
+}
+
+.slider-bg__swiper-button-block .swiper-button {
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 32px;
+	flex: 0 0 32px;
+	height: 32px;
+	border: 0.83px solid #fff;
+	border-radius: 0;
+}
+
+.slider-main__slide{
+	background: url('../img/index-bg.jpg');
+}
+//========================================================================================================================================================
+
+// Team
+.team {
+	padding: 35px 0 73px 0;
+	background: #E8E8E8;
+	&__title {
+		margin-bottom: 42px;
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -13.5px;
+	}
+
+	&__column {
+		display: flex;
+		flex: 0 1 25%;
+		overflow: hidden;
+		padding: 0 13.5px;
+		margin-bottom: 27px;
+	}
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		flex: 0 1 100%;
+		padding-bottom: 47px;
+		background: #fff;
+	}
+
+	&__card-img {
+		height: 390px;
+		overflow: hidden;
+	}
+
+	&__card-descp {
+		padding: 20px 10px 0px 37px;
+		flex: 1 1 auto;
+		margin-bottom: 26px;
+	}
+
+	&__card-title {
+		margin-bottom: 11px;
+	}
+
+	&__card-position {
+		font-size: 14px;
+		// font-weight: 300;
+		color: #AE0018;
+	}
+
+	&__card-nav {
+		display: flex;
+		flex-direction: column;
+		padding: 0 10px 0 37px;
+	}
+
+	&__card-nav-phone {
+		display: flex;
+    align-items: center;
+		font-size: 18px;
+		line-height: 21.6px;
+		margin-bottom: 3px;
+		&::before{
+			content:'';
+			float: left;
+			flex: 0 0 12.6px;
+			height: 12.6px;
+			margin-right: 18px;
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			background-size: 100%;
+			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMi42MDIiIGhlaWdodD0iMTIuNTUzIiB2aWV3Qm94PSIwIDAgMTIuNjAyIDEyLjU1MyI+DQogIDxnIGlkPSLQodCz0YDRg9C/0L/QuNGA0L7QstCw0YLRjF85NSIgZGF0YS1uYW1lPSLQodCz0YDRg9C/0L/QuNGA0L7QstCw0YLRjCA5NSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTMwMjIuMjEzIC00OTQ4LjY2KSI+DQogICAgPHBhdGggaWQ9ItCa0L7QvdGC0YPRgF8xMSIgZGF0YS1uYW1lPSLQmtC+0L3RgtGD0YAgMTEiIGQ9Ik0zMDIyLjIxMyw0OTUxLjgxMWMuMDQyLS4yMjQuMDczLS40NS4xMjctLjY3MWEzLjkzOCwzLjkzOCwwLDAsMSwxLjIzOS0yLjEzLDEuMzM0LDEuMzM0LDAsMCwxLDEuODYzLjA1OXEuODgyLjg3NywxLjc1OCwxLjc1OGExLjMzOSwxLjMzOSwwLDAsMSwuMDA2LDEuOTM2cS0uMzA5LjMxNi0uNjI3LjYyNWEuMTE2LjExNiwwLDAsMC0uMDI3LjE2Nyw4LjE0NSw4LjE0NSwwLDAsMCwzLjM5NCwzLjM5MS4xMTQuMTE0LDAsMCwwLC4xNjUtLjAyOGMuMTkyLS4yLjM5My0uMzg0LjU4MS0uNTg1YTEuMzY1LDEuMzY1LDAsMCwxLDIuMDE4LDBxLjgxMy44NTYsMS42NzEsMS42NzFhMS40LDEuNCwwLDAsMSwuMTM4LDEuODc0LDMuMDc3LDMuMDc3LDAsMCwxLTIuMjc1LDEuMzE3LDQuODc2LDQuODc2LDAsMCwxLTEuODc5LS4yMTcsOS43ODQsOS43ODQsMCwwLDEtMy41MzctMS45LDE3LjM3MSwxNy4zNzEsMCwwLDEtMy43LTQuMDU1LDUuNzE4LDUuNzE4LDAsMCwxLS44NTUtMi4xYy0uMDIyLS4xMjQtLjA0MS0uMjQ5LS4wNjItLjM3M1ptOS43NDUsOC42MjJjLjExMi0uMDE4LjMxMS0uMDQ0LjUwOC0uMDc5YTIuMTQsMi4xNCwwLDAsMCwxLjQzOC0uOTg0LjU4Ni41ODYsMCwwLDAtLjA4My0uODE3Yy0uNTc0LS41NTItMS4xMjktMS4xMjMtMS42OTItMS42ODVhLjU1OC41NTgsMCwwLDAtLjg1NSwwcS0uMzcuMzY4LS43NC43NGEuNjIxLjYyMSwwLDAsMS0uOC4xMmMtLjM3LS4yMTEtLjc0MS0uNDIzLTEuMDk0LS42NjFhOC44NDUsOC44NDUsMCwwLDEtMi44NzYtMy4zMDYuNjI3LjYyNywwLDAsMSwuMTI1LS44Yy4yNDktLjI1LjUtLjUuNzQ4LS43NDlhLjU1MS41NTEsMCwwLDAsLjAxNC0uODIxcS0uODg3LS44OS0xLjc3Ni0xLjc3NWEuNTMuNTMsMCwwLDAtLjc0NC0uMDQyLDIuMjEzLDIuMjEzLDAsMCwwLS4zODMuMzgsMy41NzcsMy41NzcsMCwwLDAtLjY0LDMuMDksNS43ODMsNS43ODMsMCwwLDAsLjk4NywyLjAxOCwxOC4wMzksMTguMDM5LDAsMCwwLDIuNzg3LDMuMDQyLDEwLjIxNiwxMC4yMTYsMCwwLDAsMi45LDEuODQzQTYuMiw2LjIsMCwwLDAsMzAzMS45NTgsNDk2MC40MzNaIiBmaWxsPSIjYWUwMDE4Ii8+DQogICAgPHBhdGggaWQ9ItCa0L7QvdGC0YPRgF8xMiIgZGF0YS1uYW1lPSLQmtC+0L3RgtGD0YAgMTIiIGQ9Ik0zMDMzLjY4NSw0OTUzLjU2NWEuNC40LDAsMCwxLS43ODUuMDg5LDMuNjg0LDMuNjg0LDAsMCwwLTIuNzQxLTMuMDEzLDIuNDU0LDIuNDU0LDAsMCwwLS4zMjUtLjA2MS40LjQsMCwwLDEtLjMyOS0uNDU4LjQuNCwwLDAsMSwuNDU0LS4zMjEsNC41MzEsNC41MzEsMCwwLDEsMy42OTMsMy41NDFDMzAzMy42NjksNDk1My40MjYsMzAzMy42NzcsNDk1My41MTIsMzAzMy42ODUsNDk1My41NjVaIiBmaWxsPSIjYWUwMDE4Ii8+DQogICAgPHBhdGggaWQ9ItCa0L7QvdGC0YPRgF8xMyIgZGF0YS1uYW1lPSLQmtC+0L3RgtGD0YAgMTMiIGQ9Ik0zMDI5LjU4Nyw0OTUxLjQ0MWEyLjI1NCwyLjI1NCwwLDAsMSwuNzY3LjI0MywzLjEzNSwzLjEzNSwwLDAsMSwxLjcxNSwyLjExMS43NzYuNzc2LDAsMCwxLC4wMjEuMzEzLjM3Ny4zNzcsMCwwLDEtLjM4Ny4zMTEuNDA3LjQwNywwLDAsMS0uMzgxLS4zMzcsMi4zMzYsMi4zMzYsMCwwLDAtMS43MTUtMS44MzdjLS4wNTQtLjAxNi0uMTEyLS4wMi0uMTY3LS4wMzRhLjQuNCwwLDAsMS0uMy0uNDMxQS40MDguNDA4LDAsMCwxLDMwMjkuNTg3LDQ5NTEuNDQxWiIgZmlsbD0iI2FlMDAxOCIvPg0KICA8L2c+DQo8L3N2Zz4NCg==');
+		}
+	}
+
+	&__card-nav-email {
+		display: flex;
+    align-items: center;
+		font-size: 18px;
+		line-height: 21.6px;
+		&::before{
+			content:'';
+			float: left;
+			flex: 0 0 17px;
+			height: 12.5px;
+			margin-top: 2px;
+			margin-right: 18px;
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			background-size: 100%;
+			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNy4xMzQiIGhlaWdodD0iMTIuNDY5IiB2aWV3Qm94PSIwIDAgMTcuMTM0IDEyLjQ2OSI+DQogIDxnIGlkPSLQodCz0YDRg9C/0L/QuNGA0L7QstCw0YLRjF85NCIgZGF0YS1uYW1lPSLQodCz0YDRg9C/0L/QuNGA0L7QstCw0YLRjCA5NCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTMwMjIuMjEzIC00OTc1LjU0NCkiPg0KICAgIDxwYXRoIGlkPSLQmtC+0L3RgtGD0YBfMTAiIGRhdGEtbmFtZT0i0JrQvtC90YLRg9GAIDEwIiBkPSJNMzAzOS4zNDcsNDk4Ni42NjVhMS44MSwxLjgxLDAsMCwxLS40LjgzLDEuNTM2LDEuNTM2LDAsMCwxLTEuMDIxLjUwNmMtLjExNy4wMDktLjIzNC4wMDktLjM1MS4wMDlxLTYuODI0LDAtMTMuNjQ4LDBhMS42ODgsMS42ODgsMCwwLDEtMS4xNDktLjM2NywxLjUxOCwxLjUxOCwwLDAsMS0uNTU5LTEuMTgzYy0uMDA3LS41MjQsMC0xLjA0OCwwLTEuNTcycTAtMy44NjQsMC03LjcyN2ExLjUzOSwxLjUzOSwwLDAsMSwxLjE2My0xLjU2LDEuODcyLDEuODcyLDAsMCwxLC41LS4wNTNjNC42LDAsOS4yMSwwLDEzLjgxNS0uMDA3YTEuNiwxLjYsMCwwLDEsMS42MzIsMS4yODkuMzY0LjM2NCwwLDAsMCwuMDI1LjA2MVptLTE1Ljg0MS0xMC4zMTNjLjA2NS4wNzIuMDkuMS4xMTYuMTI5cTMuMywzLjI5Miw2LjU5MSw2LjU4NmEuNzQ0Ljc0NCwwLDAsMCwxLjE0OC0uMDA5bDYuNTY1LTYuNTY1Yy4wMzMtLjAzMy4wNjItLjA3MS4xMjMtLjE0MVptLjA2LDEwLjg0Yy4zMjUuMDY4LDE0LjIzNS4wNTQsMTQuNDIyLS4wMDhsLTQuODE4LTQuODE5Yy0uMDIuMDE5LS4wNjEuMDU1LS4xLjA5My0uMzg3LjM4Ni0uNzcyLjc3NC0xLjE2LDEuMTU4YTEuNTI0LDEuNTI0LDAsMCwxLTIuMjU4LDBxLS41My0uNTIyLTEuMDUyLTEuMDUzYTIuNjQ2LDIuNjQ2LDAsMCwxLS4xODMtLjIyMlptNC4xNTYtNS40MS00LjcxNS00Ljc1N3Y5LjUxNFptNi4xMTgsMCw0LjcxNSw0Ljc1OHYtOS41MTVaIiBmaWxsPSIjYWUwMDE4Ii8+DQogIDwvZz4NCjwvc3ZnPg0K');
+		}
+	}
+}
+//========================================================================================================================================================
+
+// Consult
+.consult {
+	padding: 33px 0 46px 0;
+	background: #464545;
+	&__title {
+		margin-bottom: 30px;
+	}
+
+	&__subtitle {
+		font-size: 18px;
+		line-height: 21.6px;
+		text-align: center;
+		color: #fff;
+		margin-bottom: 50px;
+	}
+
+	&__form {
+	}
+
+	&__form-line {
+		max-width: 1134px;
+		width: 100%;
+		margin: 0px auto;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	&__form-input {
+		flex: 0 1 37.4%;
+	}
+
+	&__form-btn {
+	}
+}
+
+.consult__form-line .form__error {
+	flex: 0 1 100%;
+	margin-top: 10px;
+}
+//========================================================================================================================================================
+// Похожие товары
+.similar-products {
+	padding: 17px 0 50px 0;
+	&__title {
+		margin-bottom: 41px;
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -11px;
+	}
+
+	&__column {
+		display: flex;
+		flex: 0 1 20%;
+		padding: 0 11px;
+		margin-bottom: 22px;
+	}
+}
+
+.product {
+
+	&__column {
+		display: flex;
+	}
+
+	&__card {
+		display: flex;
+		flex: 0 1 100%;
+		flex-direction: column;
+		background: #E8E8E8;
+		overflow: hidden;
+	}
+
+	&__card-img {
+		height: 177px;
+		overflow: hidden;
+	}
+
+	&__card-descp {
+		flex: 1 1 auto;
+		padding: 21px 15px 23px 15px;
+	}
+
+	&__card-descp-title {
+	}
+
+	&__card-btn {
+		width: 100%;
+	}
+}
+//========================================================================================================================================================
+
+.products-sec {
+	padding: 36px 0 52px 0;
+	&__title {
+		margin-bottom: 37px;
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+	}
+
+	&__column {
+		display: flex;
+		flex: 0 1 33.333%;
+		padding: 0 15px;
+		margin-bottom: 30px;
+	}
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		flex: 0 1 100%;
+		background: #E8E8E8;
+		overflow: hidden;
+		padding-bottom: 31px;
+	}
+
+	&__card-img {
+		height: 243px;
+		overflow: hidden;
+	}
+
+	&__card-descp {
+		flex: 1 1 auto;
+		padding: 21px 15px 0 64px;
+		margin-bottom: 32px;
+	}
+
+	&__card-descp-title {
+		margin-bottom: 16px;
+	}
+
+	&__card-descp-list {
+
+	}
+
+	&__card-descp-list-item {
+		font-size: 14px;
+		margin-bottom: 8px;
+		&:last-child{margin:0px 0px 0px 0px;}
+	}
+
+	&__card-btn {
+		padding: 0 15px 0 64px;
+	}
+}
+//========================================================================================================================================================
+
+.service {
+	padding-top: 43px;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+	background-image: url('../img/service-bg.jpg');
+
+	&__title {
+		margin-bottom: 52px;
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+		margin-bottom: -100px;
+	}
+
+	&__column {
+		display: flex;
+		flex: 0 1 33.333%;
+		padding: 0 15px;
+		margin-bottom: 30px;
+	}
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		flex: 0 1 100%;
+		padding: 34px 25px 60px 70px;
+		color: #fff;
+		background: #AE0018;
+		overflow: hidden;
+	}
+
+	&__card-icon {
+		margin-bottom: 33px;
+		&::before{
+			content:'';
+			float: left;
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	}
+
+	&__card-title {
+	}
+}
+
+.service__card-icon_01:before {
+	width: 21px;
+	height: 53.5px;
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMi4zMDIiIGhlaWdodD0iNTQuNDQzIiB2aWV3Qm94PSIwIDAgMjIuMzAyIDU0LjQ0MyI+DQogIDxwYXRoIGlkPSLQmtC+0L3RgtGD0YBfMjciIGRhdGEtbmFtZT0i0JrQvtC90YLRg9GAIDI3IiBkPSJNMjcwNC4yNDYsMjYyMS43MjRoLTEuMjU1YTEuNjU4LDEuNjU4LDAsMSwxLDAtMy4zMTVoMS4yNTV2LTIuMzNoLTEuMjU1YTEuNzYzLDEuNzYzLDAsMCwxLTEuNy0xLjcsMS43LDEuNywwLDAsMSwxLjctMS43aDEuMjU1di0yLjMzaC0xLjI1NWExLjcsMS43LDAsMCwxLDAtMy40MDVoMS4yNTV2LTIuMzI5aC0xLjI1NWExLjcsMS43LDAsMCwxLDAtMy40MDVoMS4yNTV2LTQuMDMzYTMuNTg0LDMuNTg0LDAsMSwwLTcuMTY4LDB2MjguNjc0YTEuNjY3LDEuNjY3LDAsMCwxLS44MDcsMS4zNDQsOC41NTMsOC41NTMsMCwwLDAtMi4xNSwyLjYsNy4yMTksNy4yMTksMCwwLDAtLjcxNyw0LjEyMiw3LjQzOCw3LjQzOCwwLDAsMCwyLjYsNC44MzksNy4zLDcuMywwLDAsMCwxMS4xMTEtOC45NjEsNi4zMTksNi4zMTksMCwwLDAtMi4yNC0yLjYsMS43MzEsMS43MzEsMCwwLDEtLjYyNy0xLjM0NFptLTMuNTg0LDEwLjIxNWExLjI3OSwxLjI3OSwwLDAsMC0xLjA3Ni41MzcsMS4yMTgsMS4yMTgsMCwwLDAsLjE4LDEuNDM0LDEuMjQ2LDEuMjQ2LDAsMCwwLDEuNywwLDEuMTc5LDEuMTc5LDAsMCwwLC4yNjktMS4wNzUsMS4wNjUsMS4wNjUsMCwwLDAtMS4wNzUtLjlabTAtMy40MDVhNC44MDksNC44MDksMCwwLDEsNC4xMjEsMi42LDQuNjc3LDQuNjc3LDAsMCwxLS45LDUuMTA4LDQuNTY2LDQuNTY2LDAsMCwxLTcuMzQ3LTUuMiw0LjYxOCw0LjYxOCwwLDAsMSw0LjEyMi0yLjUwOVptLTkuNS0uMjY5YTExLjU0OCwxMS41NDgsMCwwLDEsMi41MDktMy4zMTV2LTI3Ljc3OGE2Ljk0NCw2Ljk0NCwwLDAsMSwxMy44ODgsMHYyNy43NzhhMTEuODQ0LDExLjg0NCwwLDAsMSwyLjYsMy4zMTUsMTAuOCwxMC44LDAsMCwxLTEuOTcyLDEyLjM2NSwxMC42NTUsMTAuNjU1LDAsMCwxLTE0LjUxNS40NDgsMTAuNDA4LDEwLjQwOCwwLDAsMS0zLjU4NS02LjgxLDEwLjAzMiwxMC4wMzIsMCwwLDEsMS4wNzYtNloiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yNjg5LjQ5OSAtMjU4OS43NzMpIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNhZTAwMTgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxIi8+DQo8L3N2Zz4NCg==');
+}
+
+.service__card-icon_02:before {
+	width: 46.7px;
+	height: 53.5px;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0Ny45NTEiIGhlaWdodD0iNTQuNDA0IiB2aWV3Qm94PSIwIDAgNDcuOTUxIDU0LjQwNCI+DQogIDxwYXRoIGlkPSLQmtC+0L3RgtGD0YBfMjgiIGRhdGEtbmFtZT0i0JrQvtC90YLRg9GAIDI4IiBkPSJNMzIwMS40MDcsMjYxNC4xMDh2LTQuMTIybC0zLjU4NC0yLjA2MXY0LjEyMlptMC03Ljk3NXYtNC4xMjJsLTcuMDc5LTQuMDMyYTEuNzA2LDEuNzA2LDAsMSwxLDEuNy0yLjk1N2w1LjM3NiwzLjEzNnYtNi4xODNhMS42NDgsMS42NDgsMCwwLDEsMS43LTEuNywxLjYyOCwxLjYyOCwwLDAsMSwxLjYxMywxLjd2Ni4xODNsNS4zNzYtMy4xMzZhMS43MzMsMS43MzMsMCwwLDEsMi4zMy42MjcsMS43NTUsMS43NTUsMCwwLDEtLjYyNywyLjMzbC03LjA3OSw0LjAzMnY0LjEyMmw0LjM5MS0yLjZhMS42ODQsMS42ODQsMCwwLDEsMi41MDksMS41MjR2NS4wMTdsMy41ODQtMi4wNjF2LTguMDY0YTEuNjQ4LDEuNjQ4LDAsMCwxLDEuNy0xLjcsMS42MjgsMS42MjgsMCwwLDEsMS42MTMsMS43djYuMTgzTDMyMjMuOSwyNjAzYTEuNzMzLDEuNzMzLDAsMCwxLDIuMzMuNjI3LDEuNzU1LDEuNzU1LDAsMCwxLS42MjcsMi4zM2wtNS4zNzYsMy4wNDYsNS4zNzYsMy4xMzZhMS42MjgsMS42MjgsMCwwLDEsLjYyNywyLjI0LDEuNzMyLDEuNzMyLDAsMCwxLTIuMzMuNjI4bC02Ljk4OS00LjAzMy0zLjU4NCwyLjA2MSw0LjM5MSwyLjUwOWExLjY0NCwxLjY0NCwwLDAsMSwwLDIuODY4bC00LjM5MSwyLjYsMy41ODQsMi4wNjEsNi45ODktNC4xMjJhMS43MzMsMS43MzMsMCwwLDEsMi4zMy42MjcsMS43NTUsMS43NTUsMCwwLDEtLjYyNywyLjMzbC01LjM3NiwzLjA0Nyw1LjM3NiwzLjEzNmExLjYyNywxLjYyNywwLDAsMSwuNjI3LDIuMjQsMS43MzIsMS43MzIsMCwwLDEtMi4zMy42MjdsLTUuMzc2LTMuMDQ2djYuMTgyYTEuNjA2LDEuNjA2LDAsMCwxLTEuNjEzLDEuNjEzLDEuNjI4LDEuNjI4LDAsMCwxLTEuNy0xLjYxM3YtOC4xNTRsLTMuNTg0LTIuMDYxdjUuMTA4YTEuNjksMS42OSwwLDAsMS0yLjUwOSwxLjQzM2wtNC4zOTEtMi41MDh2NC4wMzJsNy4wNzksNC4xMjFhMS42MjgsMS42MjgsMCwwLDEsLjYyNywyLjI0MSwxLjczMywxLjczMywwLDAsMS0yLjMzLjYyN2wtNS4zNzYtMy4wNDd2Ni4xODNhMS42MDcsMS42MDcsMCwwLDEtMS42MTMsMS42MTMsMS42MjgsMS42MjgsMCwwLDEtMS43LTEuNjEzdi02LjE4M2wtNS4zNzYsMy4wNDdhMS43NTUsMS43NTUsMCwwLDEtMi4zMy0uNjI3LDEuNjI4LDEuNjI4LDAsMCwxLC42MjctMi4yNDFsNy4wNzktNC4xMjF2LTQuMDMybC00LjM5MSwyLjUwOGExLjY3MywxLjY3MywwLDAsMS0yLjUwOS0xLjQzM3YtNS4xMDhsLTMuNTg0LDIuMDYxdjguMTU0YTEuNjI4LDEuNjI4LDAsMCwxLTEuNywxLjYxMywxLjYwNiwxLjYwNiwwLDAsMS0xLjYxMy0xLjYxM3YtNi4xODJsLTUuMzc2LDMuMDQ2YTEuNzMyLDEuNzMyLDAsMCwxLTIuMzMtLjYyNywxLjYyNywxLjYyNywwLDAsMSwuNjI3LTIuMjRsNS4zNzYtMy4xMzYtNS4zNzYtMy4wNDdhMS43NTUsMS43NTUsMCwwLDEtLjYyNy0yLjMzLDEuNzMyLDEuNzMyLDAsMCwxLDIuMzMtLjYyN2w2Ljk4OSw0LjEyMiwzLjU4NC0yLjA2MS00LjM5MS0yLjZhMS42NDQsMS42NDQsMCwwLDEsMC0yLjg2OGw0LjM5MS0yLjUwOS0zLjU4NC0yLjA2MS02Ljk4OSw0LjAzM2ExLjczMiwxLjczMiwwLDAsMS0yLjMzLS42MjgsMS42MjcsMS42MjcsMCwwLDEsLjYyNy0yLjI0bDUuMzc2LTMuMTM2LTUuMzc2LTMuMDQ2YTEuNzU1LDEuNzU1LDAsMCwxLS42MjctMi4zMywxLjczMiwxLjczMiwwLDAsMSwyLjMzLS42MjdsNS4zNzYsMy4xMzZ2LTYuMTgzYTEuNjI4LDEuNjI4LDAsMCwxLDEuNjEzLTEuNywxLjY0OCwxLjY0OCwwLDAsMSwxLjcsMS43djguMDY0bDMuNTg0LDIuMDYxdi01LjAxN2ExLjYzNCwxLjYzNCwwLDAsMSwyLjUwOS0xLjQzNFptMy4zMTUsMy44NTN2NC4xMjJsMy41ODQtMi4wNjF2LTQuMTIyWm04Ljc4MSw2Ljk4OS0zLjQ5NC0yLjA2MS0zLjU4NCwyLjA2MSwzLjU4NCwyLjA2MVptLTUuMiw5LjA1di00LjAzMmwtMy41ODQtMi4wNjF2NC4wMzJabS0xMC40ODMsMCwzLjU4NC0yLjA2MXYtNC4wMzJsLTMuNTg0LDIuMDYxWm0tNS4yLTkuMDUsMy40OTQsMi4wNjEsMy41ODQtMi4wNjEtMy41ODQtMi4wNjFaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzE3OS4wOSAtMjU4OS43NzMpIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNhZTAwMTgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxIi8+DQo8L3N2Zz4NCg==');
+}
+
+.service__card-icon_03:before {
+	width: 53.3px;
+	height: 53.3px;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1My43NzQiIGhlaWdodD0iNTMuNzY0IiB2aWV3Qm94PSIwIDAgNTMuNzc0IDUzLjc2NCI+DQogIDxnIGlkPSLQodCz0YDRg9C/0L/QuNGA0L7QstCw0YLRjF8xNDgiIGRhdGEtbmFtZT0i0KHQs9GA0YPQv9C/0LjRgNC+0LLQsNGC0YwgMTQ4IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzY2OC44MiAtMjU5MC42MzIpIj4NCiAgICA8cGF0aCBpZD0i0JrQvtC90YLRg9GAXzMxIiBkYXRhLW5hbWU9ItCa0L7QvdGC0YPRgCAzMSIgZD0iTTM3MjIuMzk0LDI2MjAuNjRhMTEuNTc1LDExLjU3NSwwLDAsMS0xLjExOCwxLjgzMSwzLjk0OSwzLjk0OSwwLDAsMS0yLjcyNy45NzRjLS45NDcuMTExLTEuODkzLjIyOS0yLjg0LjM0NGEuNTkyLjU5MiwwLDAsMC0uNTU1LjQ0Yy0uMjkuOC0uNjU4LDEuNTY0LS45NTgsMi4zNTZhLjcwOS43MDksMCwwLDAsLjA3Mi41NzhjLjY5Mi45MzQsMS40MTQsMS44NDcsMi4xMjksMi43NjRhMy4zNjksMy4zNjksMCwwLDEtLjI4Myw0LjkzMWMtMS4wNTQsMS4wNTgtMi4xMDcsMi4xMTgtMy4xNywzLjE2N2EzLjMxNSwzLjMxNSwwLDAsMS00LjY1MS4zYy0uOTc5LS43NS0xLjk0MS0xLjUyLTIuOTMtMi4yNTVhLjcwOS43MDksMCwwLDAtLjU3OS0uMDY3Yy0uNzkzLjMtMS41Ni42NjctMi4zNTcuOTU2YS41OTEuNTkxLDAsMCwwLS40NC41NTRjLS4xNDgsMS4xODctLjMxNywyLjM3Mi0uNDQxLDMuNTYxYTMuMzQ4LDMuMzQ4LDAsMCwxLTMuNCwzLjEyNHEtMi40NSwwLTQuOSwwYTMuMzQ4LDMuMzQ4LDAsMCwxLTMuMzY4LTMuMDVjLS4xMzItMS4xODgtLjI5NS0yLjM3My0uNDMtMy41NjJhLjcuNywwLDAsMC0uNTMzLS42NjFjLS43MzMtLjI2LTEuNDU0LS41Ni0yLjE2MS0uODg3YS42MjMuNjIzLDAsMCwwLS43NzkuMDY3Yy0uODcyLjcxNS0xLjc3NiwxLjM5MS0yLjY2NSwyLjA4NmEzLjM3OCwzLjM3OCwwLDAsMS00Ljk3LS4yOTNjLTEuMDQ0LTEuMDQ0LTIuMDkxLTIuMDg0LTMuMTMyLTMuMTMyYTMuMywzLjMsMCwwLDEtLjMyLTQuNjQ3cTEuMTE4LTEuNDcxLDIuMjctMi45MThhLjUyNS41MjUsMCwwLDAsLjA3LS42NDRjLS4zNDQtLjc1Ni0uNjY5LTEuNTIyLS45NTctMi4zYS41OTMuNTkzLDAsMCwwLS41NDEtLjQ1NmMtMS4xODctLjE0NC0yLjM3LS4zMjgtMy41Ni0uNDQyYTMuMzU1LDMuMzU1LDAsMCwxLTMuMTQ1LTMuMzg0cS0uMDA2LTIuNDUsMC00LjlhMy4zNDgsMy4zNDgsMCwwLDEsMy4wNzgtMy4zOTNjMS4xODktLjEyNiwyLjM3NC0uMjk0LDMuNTYzLS40MzJhLjY2NS42NjUsMCwwLDAsLjYxOS0uNTA5Yy4yNjktLjc0OC41NzQtMS40ODYuOTEyLTIuMjA2YS41ODguNTg4LDAsMCwwLS4wNjUtLjczM2MtLjcyLS44OTEtMS40MS0xLjgwNi0yLjExNi0yLjcwOWEzLjM2NCwzLjM2NCwwLDAsMSwuMjk0LTQuOTI4YzEuMDU2LTEuMDU3LDIuMTA5LTIuMTE3LDMuMTcxLTMuMTY4YTMuMzA1LDMuMzA1LDAsMCwxLDQuNjA4LS4zMTdjMSwuNzUzLDEuOTcsMS41MzgsMi45NzMsMi4yODRhLjcwOS43MDksMCwwLDAsLjU3OS4wNjdjLjc5My0uMywxLjU2MS0uNjY1LDIuMzU2LS45NTZhLjYuNiwwLDAsMCwuNDM3LS41NjFjLjE0Ni0xLjE1Mi4zMDctMi4zLjQzNC0zLjQ1N2EzLjMzNSwzLjMzNSwwLDAsMSwyLjU4Ni0zLjEzOS41MzcuNTM3LDAsMCwwLC4xMjgtLjA4NGg2LjI1NWEuNTQuNTQsMCwwLDAsLjEyOC4wODQsMy4zNDYsMy4zNDYsMCwwLDEsMi41ODYsMy4xMzdjLjEyNSwxLjE1My4yOTEsMi4zLjQzLDMuNDU0YS42MzEuNjMxLDAsMCwwLC40ODYuNTc2Yy43NjQuMjc3LDEuNTE0LjU5NCwyLjI1My45M2EuNTU3LjU1NywwLDAsMCwuNjg4LS4wNThjLjkxNy0uNzQyLDEuODU3LTEuNDU1LDIuNzg4LTIuMTc5YTMuMzQ0LDMuMzQ0LDAsMCwxLDQuODA5LjI4cTEuNTY4LDEuNTYsMy4xMjksMy4xMjlhMy4zNTcsMy4zNTcsMCwwLDEsLjI4NSw0Ljg4NmMtLjcxNC45MTctMS40MTYsMS44NDQtMi4xNDcsMi43NDZhLjU1Ni41NTYsMCwwLDAtLjA2MS42ODhjLjMzNS43NC42NTQsMS40OS45MzIsMi4yNTNhLjYyOS42MjksMCwwLDAsLjU4LjQ4MmMuOTQ2LjEwNywxLjg5MS4yMjksMi44MzcuMzM5YTMuOTMsMy45MywwLDAsMSwyLjcyMi45NzYsMTEuNzUsMTEuNzUsMCwwLDEsMS4xMTQsMS44MzJabS0zNi4yMywxMi42NzJjLjI2NC4xLjQ2LjE2Mi42NS4yNDEsMS4yNDUuNTE3LDIuNDc3LDEuMDY4LDMuNzM4LDEuNTQ0YTEuMzY0LDEuMzY0LDAsMCwxLC45OTEsMS4yNDNjLjE3NywxLjUzMy4zODIsMy4wNjIuNiw0LjU4OWExLjA0MywxLjA0MywwLDAsMCwxLjE1NywxLjAxOXEyLjQyMi4wMjQsNC44NDYsMGExLjAyNSwxLjAyNSwwLDAsMCwxLjEyNC0uOTkzcS4zMjYtMi4zMTcuNjA2LTQuNjRhMS4zMzMsMS4zMzMsMCwwLDEsLjk2Ny0xLjIwNWMxLjIyOC0uNDYzLDIuNDQ1LS45NjUsMy42MzgtMS41MTRhMS4zNTcsMS4zNTcsMCwwLDEsMS41ODMuMTQ3YzEuMTgxLjk0MSwyLjM4MSwxLjg1OSwzLjU3NywyLjc4MmExLjExNiwxLjExNiwwLDAsMCwxLjczOC0uMTE3cTEuNjA3LTEuNiwzLjIwNi0zLjIwNmExLjEzMSwxLjEzMSwwLDAsMCwuMTEzLTEuNzc4Yy0uOTIxLTEuMi0xLjg0Mi0yLjM5NC0yLjc3OC0zLjU3OWExLjMsMS4zLDAsMCwxLS4xNjEtMS40OWMuNTQ5LTEuMjEyLDEuMDY5LTIuNDM5LDEuNTM4LTMuNjg0YTEuMzYxLDEuMzYxLDAsMCwxLDEuMjQzLS45OTFjMS41NDktLjE3OSwzLjEtLjM4Nyw0LjY0MS0uNjA2YTEsMSwwLDAsMCwuOTU2LTEuMDQ3cS4wMzQtMi41LDAtNWExLjAwOSwxLjAwOSwwLDAsMC0uOTg4LTEuMDcxYy0xLjUyOC0uMjE1LTMuMDU3LS40MjUtNC41OS0uNmExLjM2NCwxLjM2NCwwLDAsMS0xLjI1Ny0uOTczYy0uNDcxLTEuMjQ0LS45ODgtMi40NzItMS41MzctMy42ODRhMS4zMjgsMS4zMjgsMCwwLDEsLjE3My0xLjUzNWMuOTQxLTEuMTgxLDEuODU5LTIuMzgsMi43OC0zLjU3OGExLjExLDEuMTEsMCwwLDAtLjExNi0xLjczNnEtMS42LTEuNjA3LTMuMjA3LTMuMmExLjEyOSwxLjEyOSwwLDAsMC0xLjc3Ni0uMTEyYy0xLjIuOTIzLTIuMzkzLDEuODQ0LTMuNTc5LDIuNzc5YTEuMzA2LDEuMzA2LDAsMCwxLTEuNDkzLjE1OWMtMS4yMTItLjU0OS0yLjQzOS0xLjA2OS0zLjY4NS0xLjUzN2ExLjM2MiwxLjM2MiwwLDAsMS0uOTkxLTEuMjQyYy0uMTc3LTEuNTMzLS4zODEtMy4wNjItLjYtNC41ODlhMS4wMjYsMS4wMjYsMCwwLDAtMS4xLTEuMDE2cS0yLjQ3NS0uMDMtNC45NTEsMGExLjAxMSwxLjAxMSwwLDAsMC0xLjA3NC45ODZjLS4yMTYsMS41NDUtLjQyMiwzLjA5MS0uNjA2LDQuNjRhMS4zMzksMS4zMzksMCwwLDEtLjk2NCwxLjIwOWMtMS4yNTkuNDgxLTIuNSwxLTMuNzM0LDEuNTU0YTEuMjcxLDEuMjcxLDAsMCwxLTEuNDQ1LS4xNTVxLTEuOC0xLjQxNS0zLjYyMS0yLjgxYTEuMTExLDEuMTExLDAsMCwwLTEuNzM3LjExcS0xLjYwNywxLjYtMy4yMDUsMy4yMDdhMS4xMzEsMS4xMzEsMCwwLDAtLjEyLDEuNzc3Yy45MTEsMS4xODMsMS44MTcsMi4zNywyLjc0OCwzLjUzNmExLjM1NywxLjM1NywwLDAsMSwuMTc1LDEuNTgxYy0uNTQ2LDEuMTk0LTEuMDU2LDIuNDA4LTEuNTE3LDMuNjM3YTEuMzYyLDEuMzYyLDAsMCwxLTEuMjQxLjk5M2MtMS41NS4xOC0zLjEuMzg4LTQuNjQxLjYwNmEuOTk0Ljk5NCwwLDAsMC0uOTU5LDEuMDQycS0uMDM2LDIuNSwwLDVhMS4wMDgsMS4wMDgsMCwwLDAsLjk4NSwxLjA3NGMxLjU0NS4yMTYsMy4wOTIuNDIyLDQuNjQxLjZhMS4zMzksMS4zMzksMCwwLDEsMS4yMDguOTY1cS43MDksMS44NjQsMS41MzUsMy42ODVhMS4zMywxLjMzLDAsMCwxLS4xNjgsMS41MzZjLS45NCwxLjE4Mi0xLjg2LDIuMzgxLTIuNzgxLDMuNTc3YTEuMTA5LDEuMTA5LDAsMCwwLC4xMTQsMS43MzZxMS42LDEuNjA1LDMuMjA2LDMuMjA1YTEuMTM0LDEuMTM0LDAsMCwwLDEuNzc4LjExNWMxLjItLjkyMSwyLjM4NC0xLjg1NiwzLjU4Ny0yLjc2OUE1LjI0NSw1LjI0NSwwLDAsMSwzNjg2LjE2NCwyNjMzLjMxMloiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2FlMDAxOCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjAuNCIvPg0KICAgIDxwYXRoIGlkPSLQmtC+0L3RgtGD0YBfMzIiIGRhdGEtbmFtZT0i0JrQvtC90YLRg9GAIDMyIiBkPSJNMzY5NS43MjIsMjYwNi4zNzNhMTEuMTQxLDExLjE0MSwwLDEsMS0xMS4xNTYsMTEuMTExQTExLjE5LDExLjE5LDAsMCwxLDM2OTUuNzIyLDI2MDYuMzczWm0tLjAxMSwyLjI3YTguODcsOC44NywwLDEsMCw4Ljg2Nyw4Ljg2QTguODQ4LDguODQ4LDAsMCwwLDM2OTUuNzExLDI2MDguNjQzWiIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjYWUwMDE4IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMC40Ii8+DQogIDwvZz4NCjwvc3ZnPg0K');
+}
+//========================================================================================================================================================
+
+.completed-projects {
+	padding: 110px 0 70px 0;
+	background: #E8E8E8;
+	&__title {
+		margin-bottom: 38px;
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -14px;
+	}
+
+	&__column {
+		display: flex;
+		flex: 0 1 50%;
+		padding: 0 14px;
+		margin-bottom: 28px;
+	}
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		flex: 0 1 100%;
+		overflow: hidden;
+	}
+
+	&__card-img {
+		height: 261px;
+		overflow: hidden;
+	}
+
+	&__card-descp {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 14px 15px 19px 48px;
+		background: #5D5C5C;
+	}
+
+	&__card-descp-title {
+		color: #fff;
+	}
+
+	&__card-descp-link {
+		font-size: 14px;
+		color: #fff;
+	}
+}
+
+.completed-projects__card-descp_red {
+	background: #AE0018;
+}
+
+.completed-projects {
+
+	&__help {
+	}
+}
+.help-wrap {
+	display: flex;
+	justify-content: space-between;
+	padding: 44px 78px 63px 78px;
+	background: #fff;
+
+	&__name {
+		margin-right: 83px;
+	}
+
+	&__name-title {
+		margin-bottom: 38px;
+	}
+
+	&__name-subtitle {
+		font-size: 18px;
+		line-height: 21.6px;
+		color: #AE0018;
+	}
+
+	&__descp {
+		flex: 1 1 auto;
+		margin-right: 35px;
+	}
+
+	&__descp-list {
+	}
+
+	&__descp-list-item {
+		display: flex;
+		align-items: center;
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 24px;
+		margin-bottom: 14px;
+		&:last-child{margin:0px 0px 0px 0px;}
+		&::before{
+			content:'';
+			float: left;
+			flex: 0 0 12.5px;
+			height: 12.5px;
+			margin-right: 21px;
+			background: #AE0018;
+		}
+	}
+
+	&__btn {
+		display: flex;
+		flex-direction: column;
+		flex: 0 0 265px;
+	}
+
+	&__btn-link {
+		margin-bottom: 31px;
+		&:last-child{margin:0px 0px 0px 0px;}
+	}
+}
+//========================================================================================================================================================
+
+.title-navigation {
+	padding: 36px 0 25px 0;
+	&__title {
+
+	}
+}
+//========================================================================================================================================================
+
+// Catalog-product
+.catalog {
+	padding: 25px 0 50px 0;
+	&__wrap {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__sidebar {
+    // flex: 0 1 16%;
+		flex: 0 0 230px;
+		margin-right: 40px;
+	}
+
+	&__sidebar-menu-list {
+	}
+
+	&__sidebar-menu-list-item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 3.5px;
+		&:last-child{margin:0px 0px 0px 0px;}
+	}
+
+	&__sidebar-menu-list-item-link {
+		font-size: 16px;
+		line-height: 19.2px;
+		color: #fff;
+		padding: 9px 10px 9px 20px;
+		width: 100%;
+		background: #757474;
+	}
+
+	&__main {
+		flex: 1 1 auto;
+	}
+}
+
+.catalog__sidebar-menu-list-item-link._active {
+	background: #AE0018;
+}
+
+.catalog-product__container {
+	max-width: 1170px;
+	width: 100%;
+	margin: 0px auto;
+}
+
+.catalog-product__row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -7.5px;
+}
+.catalog-product__column {
+	flex: 0 1 24.95%;
+	padding: 0 7.5px;
+	margin-bottom: 15px;
+}
+//========================================================================================================================================================
+
+.product-sec {
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 87px;
+	}
+
+	&__img {
+		flex: 0 1 35.7%;
+		height: 337px;
+		margin-right: 15px;
+		overflow: hidden;
+	}
+
+	&__descp {
+    flex: 0 1 45%;
+	}
+
+	&__descp-title {
+		margin-bottom: 25px;
+	}
+
+	&__descp-text {
+		margin-bottom: 30px;
+	}
+
+	&__descp-list {
+		margin-bottom: 30px;
+	}
+
+	&__descp-list-item {
+	}
+
+	&__descp-footnote {
+	}
+}
+
+.product-sec {
+
+  &__table {
+    width: 100%;
+    color: #000;
+    margin-bottom: 30px;
+  }
+
+  &__table-thead {
+		font-size: 16px;
+		line-height: 23px;
+		font-weight: 700;
+    text-align: center;
+    background: #A3A3A3;
+  }
+
+  &__table-thead-tr {
+
+  }
+
+  &__table-thead-td {
+    padding: 5px 10px;
+    border-right: 0.5px solid #8C8B8B;
+  }
+
+  &__table-tbody {
+    background: white;
+  }
+
+  &__table-tbody-tr {
+		font-size: 16px;
+		line-height: 23px;
+		text-align: center;
+		border: 0.5px solid #8c8b8b;
+  }
+
+  &__table-tbody-td {
+    padding: 5px 10px;
+    border-right: 0.5px solid #8c8b8b;
+    border-bottom: 0.5px solid #8c8b8b;
+		&:first-child{
+			border-left: 0.5px solid #8c8b8b;
+		}
+  }
+}
+//========================================================================================================================================================
+
+.product-sec-charect {
+
+	&__title {
+	}
+
+	&__subtitle {
+		margin-bottom: 36px;
+	}
+
+	&__wrap {
+		display: flex;
+		margin-bottom: 50px;
+	}
+
+	&__wrap-img-block {
+		display: flex;
+		justify-content: space-between;
+		flex: 0 1 383px;
+		height: 272px;
+		background: #E8E8E8;
+		border: 0.43px solid #8c8b8b;
+		overflow: hidden;
+	}
+
+	&__wrap-img-block-image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 0 1 50%;
+		overflow: hidden;
+		border-right: 0.5px solid #8c8b8b;
+		&:last-child{
+			border-right: none;
+		}
+		img {
+			width: auto;
+			height: auto;
+		}
+	}
+
+	&__wrap-table {
+		flex: 1 1 auto;
+	}
+
+	&__descp-title {
+		margin-bottom: 25px;
+	}
+
+	&__descp-list {
+		margin-bottom: 23px;
+	}
+
+	&__descp-list-item {
+		display: flex;
+		align-items: center;
+		line-height: 23px;
+		margin-bottom: 5px;
+		&:last-child{margin:0px 0px 0px 0px;}
+		&::before{
+			content:'';
+			float: left;
+			flex: 0 0 6.5px;
+			height: 6.5px;
+			margin-right: 13px;
+			border-radius: 50%;
+			background: #AE0018;
+		}
+		&_marker-none {
+			&::before{
+				display: none;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+//<Адаптив>===========================================================================================================================================
+@import "media";
