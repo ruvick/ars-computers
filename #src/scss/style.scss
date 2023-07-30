@@ -524,6 +524,14 @@ h6 {
 	&__card-img {
 		padding-bottom: 63.3%;
 		overflow: hidden;
+		background: url('../img/nophoto.jpg');
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		img {
+			transition: all 0.5s ease 0s;
+		}
 	}
 
 	&__card-descp {
@@ -535,6 +543,12 @@ h6 {
 
 	&__card-btn {
 		width: 100%;
+	}
+}
+
+.product__card:hover {
+	.product__card-img img {
+		transform: scale(1.05);
 	}
 }
 
@@ -1055,6 +1069,23 @@ h6 {
 		}
 	}
 }
+
+//========================================================================================================================================================
+
+.page-text {}
+
+.page-text__title {}
+
+.page-text__subtitle p {
+	line-height: 28px;
+	margin-bottom: 15px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+//========================================================================================================================================================
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
