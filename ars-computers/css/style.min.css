@@ -3867,6 +3867,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   background-position: top center;
   background-size: cover;
   background-image: url("../img/service-bg.jpg");
+  background-size: auto 100vh;
+  background-attachment: fixed;
 }
 .service__title {
   position: relative;
@@ -3954,11 +3956,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   background-color: #fff;
 }
 .completed-projects__card-img img {
-  object-fit: contain;
+  object-fit: fill;
+  transition: all 0.5s ease 0s;
 }
 .completed-projects__card-descp {
   padding: 35px 15px 35px 30px;
   background: #2E8B57;
+  transition: all 0.3s ease 0s;
 }
 .completed-projects__card-descp-title {
   color: #fff;
@@ -4017,6 +4021,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .help-wrap__btn-link {
   margin-top: 25px;
   margin-bottom: 31px;
+}
+
+.completed-projects__card:hover .completed-projects__card-img img {
+  transform: scale(1.03);
+}
+.completed-projects__card:hover .completed-projects__card-descp {
+  opacity: 0.8;
 }
 
 .title-navigation {
