@@ -3,13 +3,18 @@
 	z-index: 5000;
 	padding: 22px 0 24px 0;
 	color: #fff;
-	background: #4bb64b;
+	background: #2E8B57;
 
 	&__row {
 		align-items: center;
 		justify-content: space-between;
 	}
 }
+
+// .header._scroll {
+// 	position: fixed;
+// 	width: 100%;
+// }
 
 .header_index {
 	position: absolute;
@@ -119,7 +124,7 @@
 
 	&__time-phone {
 		font-family: "MyriadPro";
-		font-size: 12px;
+		font-size: 13px;
 		font-weight: 400;
 		line-height: 14.4px;
 	}

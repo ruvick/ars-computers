@@ -453,7 +453,7 @@ h6 {
 	&__subtitle {
 		font-size: 18px;
 		line-height: 21.6px;
-		text-align: center;
+		// text-align: center;
 		color: #fff;
 		margin-bottom: 50px;
 	}
@@ -463,7 +463,7 @@ h6 {
 	&__form-line {
 		max-width: 1134px;
 		width: 100%;
-		margin: 0px auto;
+		// margin: 0px auto;
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
@@ -474,7 +474,7 @@ h6 {
 	}
 
 	&__form-btn {
-		color: #2E8B57;
+		color: #000;
 		background-color: #fff;
 	}
 }
@@ -522,7 +522,7 @@ h6 {
 	}
 
 	&__card-img {
-		height: 177px;
+		padding-bottom: 63.3%;
 		overflow: hidden;
 	}
 
@@ -761,13 +761,13 @@ h6 {
 	}
 
 	&__name-title {
-		margin-bottom: 38px;
+		margin-bottom: 20px;
 	}
 
 	&__name-subtitle {
 		font-size: 18px;
 		line-height: 21.6px;
-		color: #4bb64b;
+		color: #2E8B57;
 		color: #000;
 	}
 
@@ -796,7 +796,7 @@ h6 {
 			flex: 0 0 12.5px;
 			height: 12.5px;
 			margin-right: 21px;
-			background: #4bb64b;
+			background: #2E8B57;
 		}
 	}
 
@@ -807,11 +807,8 @@ h6 {
 	}
 
 	&__btn-link {
+		margin-top: 25px;
 		margin-bottom: 31px;
-
-		&:last-child {
-			margin: 0px 0px 0px 0px;
-		}
 	}
 }
 
@@ -859,6 +856,11 @@ h6 {
 		padding: 9px 10px 9px 20px;
 		width: 100%;
 		background: #757474;
+		transition: all 0.3s ease 0s;
+
+		&:hover {
+			background: #2E8B57;
+		}
 	}
 
 	&__main {
@@ -867,7 +869,7 @@ h6 {
 }
 
 .catalog__sidebar-menu-list-item-link._active {
-	background: #4bb64b;
+	background: #2E8B57;
 }
 
 .catalog-product__container {
@@ -1053,11 +1055,6 @@ h6 {
 		}
 	}
 }
-
-
-
-
-
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 

@@ -1,36 +1,41 @@
 // Хлебные крошки ===============================================================================================================================================
 #breadcrumbs {
-  margin-bottom: 22px; }
+	margin-bottom: 22px;
+}
 
 #breadcrumbs ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
 
 #breadcrumbs span {
 	font-family: "MyriadPro";
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16.8px;
-  color: #161615; }
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16.8px;
+	color: #161615;
+}
 
 #breadcrumbs span a {
 	font-family: "MyriadPro";
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16.8px;
-  // margin-right: 5px;
-  color: #161615;}
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16.8px;
+	// margin-right: 5px;
+	color: #161615;
+}
 
 // Пагинация 1 ===============================================================================================================================================
 .pagination {
 	justify-content: center;
 	margin-top: 43px;
+
 	// .pagination__nav-links
 	&__nav-links {
 		// max-width: 500px;
@@ -38,6 +43,7 @@
 		justify-content: flex-end;
 		align-items: center;
 	}
+
 	// .pagination__back 
 	&__back {
 		max-width: 93.5px;
@@ -50,6 +56,7 @@
 		border: 0.4px solid #c7c9cb;
 		margin-right: 37px;
 		position: relative;
+
 		&:before {
 			content: "";
 			position: absolute;
@@ -61,6 +68,7 @@
 			background-repeat: no-repeat;
 		}
 	}
+
 	// .pagination__numbers
 	&__numbers {
 		display: flex;
@@ -71,20 +79,26 @@
 		height: 32px;
 		font-size: 18px;
 		font-weight: 700;
-		border: 0.83px solid #161615;
+		border: 0.83px solid #2E8B57;
 		margin-right: 7px;
-		&:last-child{margin:0px 0px 0px 0px;}
+
+		&:last-child {
+			margin: 0px 0px 0px 0px;
+		}
 	}
+
 	&__block-dot {
 		margin-right: 20px;
 		justify-content: space-between;
 		width: 30px;
 	}
+
 	// .pagination__dot
 	&__dot {
 		display: block;
 		font-size: 16px;
 	}
+
 	// .pagination__next
 	&__next {
 		max-width: 93.5px;
@@ -97,6 +111,7 @@
 		border: 0.4px solid #c7c9cb;
 		margin-left: 13px;
 		position: relative;
+
 		&:after {
 			content: "";
 			position: absolute;
@@ -109,9 +124,10 @@
 		}
 	}
 }
+
 .current {
 	color: #fff;
-	background: #AE0018;
+	background: #2E8B57;
 	border: none;
 }
 
@@ -120,18 +136,19 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 	// .pagging__arrow
-	&__arrow {
-	}
+	&__arrow {}
+
 	// .pagging__list
 	&__list {
 		display: flex;
-		li {
-		}
+
+		li {}
 	}
+
 	// .pagging__item
 	&__item {
-		&._active {
-		}
+		&._active {}
 	}
 }
