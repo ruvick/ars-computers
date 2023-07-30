@@ -517,19 +517,22 @@ h6 {
 		display: flex;
 		flex: 0 1 100%;
 		flex-direction: column;
-		background: #E8E8E8;
+		// background: #E8E8E8;
+		border: 1px solid #E8E8E8;
 		overflow: hidden;
 	}
 
 	&__card-img {
 		padding-bottom: 63.3%;
 		overflow: hidden;
-		background: url('../img/nophoto.jpg');
-		background-position: 0 0;
-		background-repeat: no-repeat;
-		background-size: cover;
+		// background: url('../img/nophoto.jpg');
+		// background-position: 0 0;
+		// background-repeat: no-repeat;
+		// background-size: contain;
 
 		img {
+			object-fit: contain;
+			transform: scale(0.9);
 			transition: all 0.5s ease 0s;
 		}
 	}
@@ -548,7 +551,7 @@ h6 {
 
 .product__card:hover {
 	.product__card-img img {
-		transform: scale(1.05);
+		transform: scale(0.95);
 	}
 }
 
@@ -591,17 +594,22 @@ h6 {
 		border-bottom: none;
 
 		img {
+			transform: scale(0.9);
 			object-fit: contain;
+			transition: all 0.5s ease 0s;
 		}
 	}
 
 	&__card-descp {
+		display: flex;
+		flex-direction: column;
 		flex: 1 1 auto;
 		padding: 21px 25px 35px 25px;
 		// margin-bottom: 32px;
 	}
 
 	&__card-descp-title {
+		flex: 1 1 auto;
 		margin-bottom: 16px;
 	}
 
@@ -618,6 +626,12 @@ h6 {
 
 	&__card-btn {
 		padding: 0 25px;
+	}
+}
+
+.products-sec__card:hover {
+	.products-sec__card-img img {
+		transform: scale(0.95);
 	}
 }
 
