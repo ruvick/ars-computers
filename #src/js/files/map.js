@@ -4,8 +4,8 @@ ymaps.ready(init);
 function init() {
 
 	var myMap = new ymaps.Map("map", {
-		center: [51.703154, 36.140598],
-		zoom: 12,
+		center: [52.971016, 36.081687],
+		zoom: 17,
 		// Выключаем все управление картой
 		controls: []
 
@@ -13,10 +13,10 @@ function init() {
 
 	var myGeoObjects = [];
 
-	myGeoObjects[0] = new ymaps.Placemark([51.703154, 36.140598], {
+	myGeoObjects[0] = new ymaps.Placemark([52.971016, 36.081687], {
 		// Свойства. 
 		// hintContent: '<div class="map-hint">Авто профи, Курск, ул.Комарова, 16</div>',
-		balloonContent: '<div class="map-hint">Авто профи, Курск, ул.Комарова, 16</div>',
+		balloonContent: '<div class="map-hint">ООО "АРС", г.Орёл, ул. Революции, д.1</div>',
 	}, {
 		// Необходимо указать данный тип макета.
 		iconLayout: 'default#image',
