@@ -156,10 +156,10 @@ h6 {
 	line-height: 23 / 18 *100%;
 }
 
-.title {
-	color: #fff;
-	text-align: center;
-}
+// .title {
+// 	color: #fff;
+// 	text-align: center;
+// }
 
 @media (max-width: 768px) {
 	h1 {
@@ -234,8 +234,16 @@ h6 {
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
 	flex: 1 1 auto;
-	// padding: 35px 0; 
-	// padding-top: 80px;
+	// padding-bottom: 55px;
+	// background: #E8E8E8;
+}
+
+.section {
+	padding: 55px 0;
+}
+
+.section .title {
+	margin-bottom: 38px;
 }
 
 //===================================================================================================================================
@@ -255,7 +263,8 @@ h6 {
 	&__slide {
 		position: relative;
 		width: 100%;
-		padding: 203px 0 236px 0;
+		min-height: 600px;
+		padding: 230px 0;
 		background-repeat: no-repeat !important;
 		background-size: cover !important;
 		background-position: center !important;
@@ -311,6 +320,21 @@ h6 {
 
 .slider-main__slide-3 {
 	background: url('../img/slide-3.jpg');
+}
+
+//========================================================================================================================================================
+
+.about {}
+
+.about__title {}
+
+.about__subtitle p {
+	line-height: 28px;
+	margin-bottom: 15px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 //========================================================================================================================================================
@@ -419,7 +443,8 @@ h6 {
 // Consult
 .consult {
 	padding: 33px 0 46px 0;
-	background: #464545;
+	background: #2E8B57;
+	color: #fff;
 
 	&__title {
 		margin-bottom: 30px;
@@ -448,7 +473,10 @@ h6 {
 		flex: 0 1 37.4%;
 	}
 
-	&__form-btn {}
+	&__form-btn {
+		color: #2E8B57;
+		background-color: #fff;
+	}
 }
 
 .consult__form-line .form__error {
@@ -527,7 +555,7 @@ h6 {
 
 	&__column {
 		display: flex;
-		flex: 0 1 33.333%;
+		flex: 0 1 25%;
 		padding: 0 15px;
 		margin-bottom: 30px;
 	}
@@ -542,7 +570,7 @@ h6 {
 	}
 
 	&__card-img {
-		height: 243px;
+		padding-bottom: 71.6%;
 		overflow: hidden;
 		background-color: #fff;
 		border: 1px solid #E8E8E8;
@@ -555,8 +583,8 @@ h6 {
 
 	&__card-descp {
 		flex: 1 1 auto;
-		padding: 21px 15px 0 64px;
-		margin-bottom: 32px;
+		padding: 21px 25px 35px 25px;
+		// margin-bottom: 32px;
 	}
 
 	&__card-descp-title {
@@ -575,7 +603,7 @@ h6 {
 	}
 
 	&__card-btn {
-		padding: 0 15px 0 64px;
+		padding: 0 25px;
 	}
 }
 
@@ -592,6 +620,7 @@ h6 {
 	&__title {
 		position: relative;
 		z-index: 5;
+		color: #fff;
 		margin-bottom: 52px;
 	}
 
@@ -601,7 +630,7 @@ h6 {
 		display: flex;
 		flex-wrap: wrap;
 		margin: 0 -15px;
-		margin-bottom: -100px;
+		// margin-bottom: -100px;
 	}
 
 	&__column {
@@ -672,7 +701,7 @@ h6 {
 
 	&__column {
 		display: flex;
-		flex: 0 1 50%;
+		flex: 0 1 33.333%;
 		padding: 0 14px;
 		margin-bottom: 28px;
 	}
@@ -685,7 +714,7 @@ h6 {
 	}
 
 	&__card-img {
-		height: 261px;
+		padding-bottom: 60%;
 		overflow: hidden;
 		background-color: #fff;
 
@@ -695,11 +724,11 @@ h6 {
 	}
 
 	&__card-descp {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 14px 15px 19px 48px;
-		background: #5D5C5C;
+		// display: flex;
+		// justify-content: space-between;
+		// align-items: center;
+		padding: 35px 15px 35px 30px;
+		background: #2E8B57;
 	}
 
 	&__card-descp-title {
@@ -712,9 +741,9 @@ h6 {
 	}
 }
 
-.completed-projects__card-descp_red {
-	background: #4bb64b;
-}
+// .completed-projects__card-descp_red {
+// 	background: #4bb64b;
+// }
 
 .completed-projects {
 
