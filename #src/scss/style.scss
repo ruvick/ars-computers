@@ -1085,6 +1085,29 @@ h6 {
 	}
 }
 
+.page-text__contacts-name {
+	margin-bottom: 15px;
+}
+
+.page-text__list {}
+
+.list-contacts {}
+
+.list-contacts__item {
+	font-weight: 700;
+	margin-bottom: 15px;
+
+	span {
+		font-weight: 400;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.list-contacts__link {}
+
 //========================================================================================================================================================
 .map-section {
 	height: 600px;

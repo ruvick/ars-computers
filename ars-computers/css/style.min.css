@@ -4173,6 +4173,21 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   margin-bottom: 0;
 }
 
+.page-text__contacts-name {
+  margin-bottom: 15px;
+}
+
+.list-contacts__item {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.list-contacts__item span {
+  font-weight: 400;
+}
+.list-contacts__item:last-child {
+  margin-bottom: 0;
+}
+
 .map-section {
   height: 600px;
 }
