@@ -2608,6 +2608,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .pagging__list {
   display: flex;
 }
+#map {
+  background: url("../img/icons/loading.gif") center/50px no-repeat;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
 .tippy-box[data-animation=fade][data-state=hidden] {
   opacity: 0;
 }
@@ -4162,6 +4171,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 .page-text__subtitle p:last-child {
   margin-bottom: 0;
+}
+
+.map-section {
+  height: 600px;
 }
 
 @media (max-width: 1480px) {
