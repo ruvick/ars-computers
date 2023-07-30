@@ -233,6 +233,10 @@ h6 {
   font-weight: 600;
   color: #fff;
   background: #2E8B57;
+  transition: all 0.3s ease 0s;
+}
+.btn:hover {
+  opacity: 0.8;
 }
 .btn.fw {
   width: 100%;
@@ -2514,6 +2518,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   font-weight: 400;
   line-height: 16.8px;
   color: #161615;
+  transition: all 0.3s ease 0s;
+}
+#breadcrumbs span a:hover {
+  opacity: 0.7;
 }
 
 .pagination {
@@ -2558,6 +2566,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   font-weight: 700;
   border: 0.83px solid #2E8B57;
   margin-right: 7px;
+  transition: all 0.3s ease 0s;
 }
 .pagination__numbers:last-child {
   margin: 0px 0px 0px 0px;
@@ -2592,6 +2601,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   height: 10px;
   background: url("../img/icons/pagination__next.svg");
   background-repeat: no-repeat;
+}
+
+.pagination__nav-links a {
+  transition: all 0.3s ease 0s;
+}
+.pagination__nav-links a:hover {
+  color: #fff;
+  background-color: #2E8B57;
 }
 
 .current {
@@ -3237,6 +3254,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   font-size: 14px;
   font-weight: 400;
   padding: 5px 0 5px 41px;
+  transition: all 0.3s ease 0s;
+}
+.menu-list a:hover {
+  opacity: 0.7;
 }
 
 .header__menu-list {
@@ -3267,6 +3288,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   font-size: 24px;
   font-weight: 700;
   line-height: 28.8px;
+  transition: all 0.3s ease 0s;
+}
+.contacts__phone:hover {
+  opacity: 0.7;
 }
 .contacts__time-phone {
   font-family: "MyriadPro";
@@ -4187,6 +4212,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 .list-contacts__item:last-child {
   margin-bottom: 0;
+}
+
+.list-contacts__link {
+  transition: all 0.3s ease 0s;
+}
+.list-contacts__link:hover {
+  opacity: 0.7;
 }
 
 .map-section {

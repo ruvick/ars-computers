@@ -29,6 +29,11 @@
 	line-height: 16.8px;
 	// margin-right: 5px;
 	color: #161615;
+	transition: all 0.3s ease 0s;
+
+	&:hover {
+		opacity: 0.7;
+	}
 }
 
 // Пагинация 1 ===============================================================================================================================================
@@ -81,6 +86,7 @@
 		font-weight: 700;
 		border: 0.83px solid #2E8B57;
 		margin-right: 7px;
+		transition: all 0.3s ease 0s;
 
 		&:last-child {
 			margin: 0px 0px 0px 0px;
@@ -122,6 +128,15 @@
 			background: url("../img/icons/pagination__next.svg");
 			background-repeat: no-repeat;
 		}
+	}
+}
+
+.pagination__nav-links a {
+	transition: all 0.3s ease 0s;
+
+	&:hover {
+		color: #fff;
+		background-color: #2E8B57;
 	}
 }
 
