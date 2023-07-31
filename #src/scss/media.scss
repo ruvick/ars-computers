@@ -92,7 +92,7 @@
 
 @media (max-width: 1024px) {
 	.products-sec__column {
-		flex: 0 1 50%;
+		flex: 0 1 33.333%;
 	}
 
 	.completed-projects__card-descp {
@@ -117,6 +117,10 @@
 
 	.similar-products__column {
 		flex: 0 1 25%;
+	}
+
+	.slider-bg__slide {
+		background-position: 30% !important;
 	}
 }
 
@@ -216,8 +220,8 @@
 	}
 
 	.header__logo {
-		flex: 0 0 35px;
-		height: 30px;
+		flex: 0 0 38px;
+		height: 40px;
 	}
 
 	.icon-menu {
@@ -336,9 +340,9 @@
 		padding-bottom: 25px;
 	}
 
-	.products-sec__column {
-		flex: 0 1 50%;
-	}
+	// .products-sec__column {
+	// 	flex: 0 1 50%;
+	// }
 
 	.service__row {
 		width: auto;
@@ -631,6 +635,36 @@
 	.slider-bg__slide {
 		min-height: 350px;
 	}
+
+	.slider-bg__slide {
+		min-height: 260px;
+	}
+
+	.slider-bg__title {
+		font-size: 36px;
+	}
+
+	.page-text__contacts-name {
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
+
+	.list-contacts__item {
+		font-size: 14px;
+		margin-bottom: 5px;
+	}
+
+	.map-section {
+		height: 350px;
+	}
+
+	.consult {
+		padding: 45px 0 35px 0 !important;
+	}
+
+	.page {
+		padding-top: 50px;
+	}
 }
 
 @media (max-width: 730px) {
@@ -711,6 +745,10 @@
 
 @media (max-width: 540px) {
 	.catalog-product__column {
+		flex: 0 1 50%;
+	}
+
+	.products-sec__column {
 		flex: 0 1 50%;
 	}
 }
@@ -807,7 +845,7 @@
 
 @media (max-width: 414px) {
 	.products-sec__column {
-		flex: 0 1 100%;
+		// flex: 0 1 100%;
 		margin-bottom: 15px;
 	}
 
@@ -840,6 +878,19 @@
 	.product-sec-charect__wrap-img-block-image:last-child {
 		border-bottom: none;
 	}
+
+	.slider-bg__slide {
+		padding: 55px 0 35px 0;
+		min-height: 230px;
+	}
+
+	.slider-bg__title {
+		font-size: 30px;
+	}
+
+	.products-sec__card-btn-link {
+		width: 100%;
+	}
 }
 
 @media (max-width: 375px) {
@@ -851,9 +902,9 @@
 		flex: 0 0 83%;
 	}
 
-	.catalog-product__column {
-		flex: 0 1 100%;
-	}
+	// .catalog-product__column {
+	// 	flex: 0 1 100%;
+	// }
 
 	.product__card-img {
 		height: 170px;
@@ -861,9 +912,9 @@
 }
 
 @media (max-width: 360px) {
-	.slider-bg__title {
-		font-size: 22px;
-	}
+	// .slider-bg__title {
+	// 	font-size: 22px;
+	// }
 
 	.service__column {
 		flex: 0 0 88%;
@@ -875,5 +926,15 @@
 
 	.similar-products__column {
 		flex: 0 0 75%;
+	}
+}
+
+@media (max-width: 345px) {
+	.products-sec__column {
+		flex: 0 1 100%;
+	}
+
+	.catalog-product__column {
+		flex: 0 1 100%;
 	}
 }
