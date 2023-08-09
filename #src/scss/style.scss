@@ -57,20 +57,13 @@
 }
 
 @font-face {
-	font-family: 'MyriadPro';
-	src: url('../fonts/MyriadPro-Regular.eot');
-	src: local('☺'), url('../fonts/MyriadPro-Regular.woff') format('woff'), url('../fonts/MyriadPro-Regular.ttf') format('truetype'), url('../fonts/MyriadPro-Regular.svg') format('svg');
+	font-family: 'matrix';
+	src: url('../fonts/matrix.eot');
+	src: local('☺'), url('../fonts/matrix.woff') format('woff'), url('../fonts/matrix.ttf') format('truetype'), url('../fonts/matrix.svg') format('svg');
 	font-weight: 400;
 	font-style: normal;
 }
 
-@font-face {
-	font-family: 'MyriadPro';
-	src: url('../fonts/MyriadPro-Bold.eot');
-	src: local('☺'), url('../fonts/MyriadPro-Bold.woff') format('woff'), url('../fonts/MyriadPro-Bold.ttf') format('truetype'), url('../fonts/MyriadPro-Bold.svg') format('svg');
-	font-weight: 700;
-	font-style: normal;
-}
 
 //</Подключаем шрифты>=======================================================================================
 
@@ -79,7 +72,7 @@
 //</Иконочные шрифты>==========================================================================================
 
 //<Шрифт по умолчанию>==========================================================================================
-$fontFamily: "Lato";
+$fontFamily: "matrix";
 $fontSize: 16;
 //</Шрифт по умолчанию>==========================================================================================
 
@@ -107,7 +100,7 @@ body {
 	color: $mainColor;
 
 	a {
-		font-family: "Lato";
+		font-family: "matrix, sans-serif" !important;
 		line-height: 16.8px;
 		color: #161615;
 	}
