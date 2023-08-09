@@ -84,7 +84,7 @@
 		height: 32px;
 		font-size: 18px;
 		font-weight: 700;
-		border: 0.83px solid #2E8B57;
+		border: 0.83px solid $mainColorBg;
 		margin-right: 7px;
 		transition: all 0.3s ease 0s;
 
@@ -135,14 +135,16 @@
 	transition: all 0.3s ease 0s;
 
 	&:hover {
-		color: #fff;
-		background-color: #2E8B57;
+		color: #000;
+		background-color: $mainColorBg;
+		;
 	}
 }
 
 .current {
-	color: #fff;
-	background: #2E8B57;
+	color: #000;
+	background: $mainColorBg;
+	;
 	border: none;
 }
 
