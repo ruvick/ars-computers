@@ -76,7 +76,7 @@ body {
 
 body {
   line-height: 1;
-  font-family: "matrix";
+  font-family: "Lato";
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -85,7 +85,7 @@ body {
 input,
 button,
 textarea {
-  font-family: "matrix";
+  font-family: "Lato";
   font-size: inherit;
 }
 
@@ -145,7 +145,7 @@ body {
   color: #161615;
 }
 body a {
-  font-family: "matrix, sans-serif" !important;
+  font-family: "Lato", sans-serif;
   line-height: 16.8px;
   color: #161615;
 }
@@ -2499,7 +2499,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 #breadcrumbs span {
-  font-family: "MyriadPro";
+  font-family: "Lato";
   font-size: 14px;
   font-weight: 400;
   line-height: 16.8px;
@@ -2507,7 +2507,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 #breadcrumbs span a {
-  font-family: "MyriadPro";
+  font-family: "Lato";
   font-size: 14px;
   font-weight: 400;
   line-height: 16.8px;
@@ -3258,7 +3258,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 .menu-list a {
   display: block;
-  font-family: "MyriadPro";
+  font-family: "Lato";
   font-size: 15px;
   font-weight: 400;
   padding: 2px 0 2px 41px;
@@ -3293,7 +3293,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   flex-direction: column;
 }
 .contacts__phone {
-  font-family: "MyriadPro";
+  font-family: "Lato";
   font-size: 24px;
   font-weight: 700;
   line-height: 28.8px;
@@ -3304,7 +3304,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   opacity: 0.7;
 }
 .contacts__time-phone {
-  font-family: "MyriadPro";
+  font-family: "Lato";
   font-size: 13px;
   font-weight: 400;
   line-height: 14.4px;
