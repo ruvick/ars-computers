@@ -570,6 +570,7 @@ h6 {
 	&__column {
 		display: flex;
 		flex: 0 1 25%;
+		flex: 0 1 33.333%;
 		padding: 0 15px;
 		margin-bottom: 30px;
 	}
@@ -629,6 +630,7 @@ h6 {
 		justify-content: space-between;
 
 		.btn {
+			flex: 1 1 auto;
 			margin-right: 5px;
 
 			&:last-child {
@@ -1197,7 +1199,7 @@ h6 {
 	width: 100%;
 	background: #757474;
 	transition: all 0.3s ease 0s;
-	margin-bottom: 15px;
+	margin-bottom: 5px;
 	transition: all 0.3s ease 0s;
 
 	&:last-child {
