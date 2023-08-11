@@ -754,6 +754,11 @@
 	.catalog__sidebar-ptice-block {
 		margin-bottom: 20px;
 	}
+
+	.footer__contacts-social {
+		font-size: 14px;
+		margin-top: 5px;
+	}
 }
 
 @media (max-width: 730px) {
@@ -829,6 +834,14 @@
 
 	.similar-products__column {
 		flex: 0 0 45%;
+	}
+
+	.footer__contacts-social {
+		justify-content: start;
+	}
+
+	.footer .contacts__time-phone {
+		display: none;
 	}
 }
 
