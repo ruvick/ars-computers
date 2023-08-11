@@ -3858,6 +3858,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   background-color: #fff;
   border: 1px solid #E8E8E8;
   border-bottom: none;
+  filter: grayscale(1);
+  transition: all 0.3s ease 0s;
 }
 .products-sec__card-img img {
   transform: scale(0.9);
@@ -3898,6 +3900,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 .products-sec__card:hover .btn--price {
   background-color: #56edba;
+}
+.products-sec__card:hover .products-sec__card-img {
+  filter: grayscale(0);
 }
 
 .service {

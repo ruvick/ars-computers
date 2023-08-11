@@ -589,6 +589,8 @@ h6 {
 		background-color: #fff;
 		border: 1px solid #E8E8E8;
 		border-bottom: none;
+		filter: grayscale(1);
+		transition: all 0.3s ease 0s;
 
 		img {
 			transform: scale(0.9);
@@ -643,6 +645,10 @@ h6 {
 
 	.btn--price {
 		background-color: #56edba;
+	}
+
+	.products-sec__card-img {
+		filter: grayscale(0);
 	}
 }
 
